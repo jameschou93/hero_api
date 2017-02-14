@@ -1,4 +1,4 @@
-class V1::HeroesController < ApplicationController
+class API::V1::HeroesController < ApplicationController
 
   def index
     @heroes = Hero.all

@@ -1,4 +1,4 @@
-class API::V1::HeroesController < ApplicationController
+class Api::V1::HeroesController < ApplicationController
 
   def index
     @heroes = Hero.all
@@ -16,4 +16,15 @@ class API::V1::HeroesController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def edit
+    
+  end
+
+  def update
+    hero = Hero.find_by(id: params[:id])
+    hero.update(name: params[:name],
+                power: params[:power],
+                bad_guy: params[:bad_guy]
+      )
+  end
 end
